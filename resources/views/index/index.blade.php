@@ -51,52 +51,67 @@
             </div>
         </div>
     </nav>
-    @if($banner)
-        <div id="myCarousel" class="carousel slide">
+    <div class="row">
+        @if($banner)
+            <div id="myCarousel" class="carousel slide">
 
-            <!-- 轮播（Carousel）指标 -->
-            <ol class="carousel-indicators">
-                @foreach($banner as $key=>$b)
-                    @if($key==0)
-                        <li data-target="#myCarousel" data-slide-to="{{$key}}" class="active"></li>
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    @foreach($banner as $key=>$b)
+                        @if($key==0)
+                            <li data-target="#myCarousel" data-slide-to="{{$key}}" class="active"></li>
 
-                    @else
-                        <li data-target="#myCarousel" data-slide-to="{{$key}}"></li>
+                        @else
+                            <li data-target="#myCarousel" data-slide-to="{{$key}}"></li>
 
-                    @endif
-                @endforeach
-            </ol>
-            <div class="carousel-inner">
-                @foreach($banner as $key=>$b)
-                    @if($key==0)
-                        <div class="item active">
-                            <a href="{{url('/banner')}}?id={{$b->banner_detail_id}}">
-                                <img class="center-block img-responsive"
-                                     src="{{$b->img}}" alt="{{$b->title}}">
-                                <div class="carousel-caption">{{$b->title}}</div>
-                            </a>
-                        </div>
-                    @else
-                        <div class="item">
-                            <a href="{{url('/banner')}}?id={{$b->banner_detail_id}}">
-                                <img class="center-block img-responsive"
-                                     src="{{$b->img}}" alt="{{$b->title}}">
-                                <div class="carousel-caption">{{$b->title}}</div>
-                            </a>
-                        </div>
+                        @endif
+                    @endforeach
+                </ol>
+                <div class="carousel-inner">
+                    @foreach($banner as $key=>$b)
+                        @if($key==0)
+                            <div class="item active">
+                                <a href="{{url('/banner')}}?id={{$b->banner_detail_id}}">
+                                    <img class="center-block img-responsive"
+                                         src="{{$b->img}}" alt="{{$b->title}}">
+                                    <div class="carousel-caption">{{$b->title}}</div>
+                                </a>
+                            </div>
+                        @else
+                            <div class="item">
+                                <a href="{{url('/banner')}}?id={{$b->banner_detail_id}}">
+                                    <img class="center-block img-responsive"
+                                         src="{{$b->img}}" alt="{{$b->title}}">
+                                    <div class="carousel-caption">{{$b->title}}</div>
+                                </a>
+                            </div>
 
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
+                </div>
+                <a class="carousel-control left" href="#myCarousel"
+                   data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel"
+                   data-slide="next">&rsaquo;</a>
             </div>
-            <a class="carousel-control left" href="#myCarousel"
-               data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#myCarousel"
-               data-slide="next">&rsaquo;</a>
-        </div>
-    @endif
+        @endif
+    </div>
 
 
+    <div class="row">
+        <p class="text-center">
+            <button type="button" class="btn btn-info">信息按钮</button>
+            <button type="button" class="btn btn-primary">原始按钮</button>
+            <button type="button" class="btn btn-success">成功按钮</button>
+            <button type="button" class="btn btn-primary">原始按钮</button>
+            <button type="button" class="btn btn-info">信息按钮</button>
+            <button type="button" class="btn btn-primary">原始按钮</button>
+            <button type="button" class="btn btn-success">成功按钮</button>
+            <button type="button" class="btn btn-primary">原始按钮</button>
+
+        </p>
+
+    </div>
 </div>
-
 </body>
 </html>
