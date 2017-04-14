@@ -25,7 +25,7 @@ class IndexController extends Controller
     //
     public function index()
     {
-        $banner = $this->bannerRepository->getBanner(['id', 'title', 'img']);
+        $banner = $this->bannerRepository->getBanner(['id', 'title', 'img', 'banner_detail_id']);
         $recommend = $this->recommendRepository->getRecommend(['id', 'title']);
         $pageData['banner'] = $banner;
         $pageData['recommend'] = $recommend;

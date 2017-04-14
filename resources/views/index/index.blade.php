@@ -70,15 +70,19 @@
                 @foreach($banner as $key=>$b)
                     @if($key==0)
                         <div class="item active">
-                            <img class="center-block img-responsive"
-                                 src="{{$b->img}}" alt="{{$b->title}}">
-                            <div class="carousel-caption">{{$b->title}}</div>
+                            <a href="{{url('/banner')}}?id={{$b->banner_detail_id}}">
+                                <img class="center-block img-responsive"
+                                     src="{{$b->img}}" alt="{{$b->title}}">
+                                <div class="carousel-caption">{{$b->title}}</div>
+                            </a>
                         </div>
                     @else
                         <div class="item">
-                            <img class="center-block img-responsive"
-                                 src="{{$b->img}}" alt="{{$b->title}}">
-                            <div class="carousel-caption">{{$b->title}}</div>
+                            <a href="{{url('/banner')}}?id={{$b->banner_detail_id}}">
+                                <img class="center-block img-responsive"
+                                     src="{{$b->img}}" alt="{{$b->title}}">
+                                <div class="carousel-caption">{{$b->title}}</div>
+                            </a>
                         </div>
 
                     @endif

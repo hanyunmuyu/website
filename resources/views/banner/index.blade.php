@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">校团</a>
+                <a class="navbar-brand" href="/">校团</a>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="搜索">
@@ -51,52 +51,58 @@
             </div>
         </div>
     </nav>
-    @if($banner)
-        <div id="myCarousel" class="carousel slide">
-            <ol class="carousel-indicators">
-                @foreach($banner->content as $key=>$b)
-                    @if($key==0)
-                        <li data-target="#myCarousel" data-slide-to="{{$key}}" class="active"></li>
-                    @else
-                        <li data-target="#myCarousel" data-slide-to="{{$key}}"></li>
-                    @endif
-                @endforeach
-            </ol>
-            <div class="carousel-inner">
-                @foreach($banner->content as $key=>$b)
-                    @if($key==0)
-                        <div class="item active">
-                            <div class="thumbnail">
-                                <img src="{{$b['img']}}" class="center-block img-responsive"
-                                     alt="通用的占位符缩略图">
-                                <div class="caption">
-                                    <p>{{$b['description']}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    @else
-                        <div class="item">
-                            <div class="thumbnail">
-                                <img src="{{$b['img']}}" class="center-block img-responsive"
-                                     alt="通用的占位符缩略图">
-                                <div class="caption">
-                                    <p>{{$b['description']}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
-            </div>
-            <a class="carousel-control left" href="#myCarousel"
-               data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#myCarousel"
-               data-slide="next">&rsaquo;</a>
-        </div>
-    @endif
     <div class="row">
-        <p class="text-left text-info lead">向左对齐文本</p>
+        @if($banner)
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    @foreach($banner->content as $key=>$b)
+                        @if($key==0)
+                            <li data-target="#myCarousel" data-slide-to="{{$key}}" class="active"></li>
+                        @else
+                            <li data-target="#myCarousel" data-slide-to="{{$key}}"></li>
+                        @endif
+                    @endforeach
+                </ol>
+                <div class="carousel-inner">
+                    @foreach($banner->content as $key=>$b)
+                        @if($key==0)
+                            <div class="item active">
+                                <div class="thumbnail">
+                                    <img src="{{$b['img']}}" class="center-block img-responsive"
+                                         alt="通用的占位符缩略图">
+                                    <div class="caption">
+                                        <p>{{$b['description']}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="item">
+                                <div class="thumbnail">
+                                    <img src="{{$b['img']}}" class="center-block img-responsive"
+                                         alt="通用的占位符缩略图">
+                                    <div class="caption">
+                                        <p>{{$b['description']}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+                <a class="carousel-control left" href="#myCarousel"
+                   data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel"
+                   data-slide="next">&rsaquo;</a>
+            </div>
+        @endif
     </div>
-
+    <div class="row">
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label class="form-control pull-right" for="form">发表评论：</label>
+                <input name="form" id="form" class="form-control">
+            </div>
+        </form>
+    </div>
     <div class="row">
         <ul class="media-list">
             <li class="media">
@@ -126,8 +132,6 @@
 
         </ul>
     </div>
-
 </div>
-
 </body>
 </html>
