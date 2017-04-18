@@ -13,3 +13,4 @@
 
 Route::get('/','IndexController@index');
 Route::get('/banner','BannerDetailController@index');
+Route::get('/school','SchoolController@index');
