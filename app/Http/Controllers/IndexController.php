@@ -29,6 +29,7 @@ class IndexController extends Controller
         $recommend = $this->recommendRepository->getRecommend(['id', 'title']);
         $pageData['banner'] = $banner;
         $pageData['recommend'] = $recommend;
+        $pageData['typeList'] = ['info', 'primary', 'success'];
         return view('index.index', $pageData);
     }
 }

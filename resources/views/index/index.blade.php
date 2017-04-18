@@ -99,17 +99,14 @@
 
 
     <div class="row">
-        <p class="text-center">
-            <button type="button" class="btn btn-info">信息按钮</button>
-            <button type="button" class="btn btn-primary">原始按钮</button>
-            <button type="button" class="btn btn-success">成功按钮</button>
-            <button type="button" class="btn btn-primary">原始按钮</button>
-            <button type="button" class="btn btn-info">信息按钮</button>
-            <button type="button" class="btn btn-primary">原始按钮</button>
-            <button type="button" class="btn btn-success">成功按钮</button>
-            <button type="button" class="btn btn-primary">原始按钮</button>
-
-        </p>
+        @if($recommend)
+            <p class="text-center">
+                @foreach($recommend as $value)
+                    <button type="button"
+                            class="btn btn-{{$typeList[array_rand(['info','primary','success'],1)]}}">{{$value['title']}}</button>
+                @endforeach
+            </p>
+        @endif
 
     </div>
 </div>
